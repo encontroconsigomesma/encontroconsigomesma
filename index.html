@@ -142,7 +142,59 @@ h1 {
 div[style*="display:flex"] {
     flex-direction: column;
 }
+/* ===== RESPONSIVO CELULAR MELHOR ===== */
 
+@media (max-width: 768px) {
+
+body {
+    padding: 0;
+}
+
+/* título menor */
+h1 {
+    font-size: 30px;
+}
+
+/* frase menor */
+.frase {
+    font-size: 17px;
+    padding: 0 10px;
+}
+
+/* layout vira coluna */
+div[style*="display:flex"] {
+    flex-direction: column;
+}
+
+/* capa menor */
+.livro3d {
+    width: 240px;
+    margin: auto;
+}
+
+/* texto do lado fica central */
+div[style*="max-width:400px"] {
+    text-align: center !important;
+}
+
+/* sinopse menor */
+.sinopse {
+    max-width: 92%;
+    font-size: 16px;
+}
+
+/* botão melhor no celular */
+.buttons a {
+    font-size: 16px;
+    padding: 10px 14px;
+}
+
+/* espaçamento menor */
+header {
+    padding: 20px 10px;
+}
+
+}
 </style>
 
 </head>
