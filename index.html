@@ -11,14 +11,16 @@
 body {
     margin: 0;
     font-family: Georgia, serif;
-    background: #0b0b0f;
     color: #f5f5f5;
     text-align: center;
+    background: radial-gradient(circle at center, #1a1a2e 0%, #000 70%);
+    background-attachment: fixed;
 }
 
 header {
-    background: radial-gradient(circle, #1a1a2e, #000);
-    padding: 30px 20px;
+    background: radial-gradient(circle at center, #1a1a2e, #000);
+    padding: 40px 20px;
+    box-shadow: 0 0 40px black inset;
 }
 
 h1 {
@@ -27,17 +29,29 @@ h1 {
 }
 
 .frase {
-    font-size: 20px;
+    font-size: 22px;
     color: #e0c27a;
     margin-bottom: 20px;
     font-style: italic;
     text-shadow: 0 0 12px black;
     letter-spacing: 1px;
+    animation: aparecer 2s ease;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .conteudo {
-    padding: 5px;
-    max-width: 700px;
+    padding: 0px;
+    max-width: 900px;
     margin: auto;
 }
 
@@ -61,31 +75,72 @@ h1 {
     color: black;
     text-decoration: none;
     border-radius: 6px;
+    transition: 0.3s;
+}
+
+.buttons a:hover {
+    background: #f5d98b;
 }
 
 /* ===== LIVRO 3D ===== */
 
 .livro3d {
-    width: 260px;
-    perspective: 800px;
+    width: 380px;
+    transition: transform 0.6s ease;
+    transform-style: preserve-3d;
+    perspective: 1000px;
+    box-shadow: 0 0 40px black;
+    border-radius: 8px;
 }
 
-.livro3d img {
-    width: 100%;
-    display: block;
-    border-radius: 6px;
-    box-shadow: -10px 10px 20px rgba(0,0,0,0.6);
-    transform: rotateY(-20deg);
-    transition: transform 0.5s;
+.livro3d:hover {
+    transform: rotateY(-25deg) rotateX(5deg) scale(1.08);
 }
 
-.livro3d:hover img {
-    transform: rotateY(0deg) scale(1.05);
-}
 footer {
     margin-top: 40px;
     padding: 20px;
     background: #000;
+}
+
+/* ===== CELULAR ===== */
+
+@media (max-width: 768px) {
+
+h1 {
+    font-size: 32px;
+}
+
+.frase {
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.livro3d {
+    width: 260px;
+}
+
+.conteudo {
+    max-width: 100%;
+    padding: 10px;
+}
+
+.sinopse {
+    max-width: 90%;
+    font-size: 16px;
+}
+
+.price {
+    font-size: 18px;
+}
+
+.buttons a {
+    font-size: 16px;
+    padding: 10px 14px;
+}
+
+div[style*="display:flex"] {
+    flex-direction: column;
 }
 
 </style>
@@ -140,7 +195,6 @@ Comprar Agora
 
 </div>
 
-
 <h2>Sobre o livro</h2>
 
 <div class="sinopse">
@@ -157,8 +211,8 @@ perdas, dúvidas e acontecimentos inexplicáveis, se deparou com a própria somb
 
 <p>
 Em textos simples, claros e diretos ao coração, Anne Krishane guia o leitor por experiências,
-reflexões e práticas que podem ajudá-lo a compreender a si mesmo, melhorar as escolhas
-e viver melhor.
+reflexões e práticas que podem ajudá-lo a compreender a si mesmo,
+melhorar as escolhas e viver melhor.
 </p>
 
 <p>
